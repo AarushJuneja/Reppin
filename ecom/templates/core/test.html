@@ -1,0 +1,65 @@
+{% extends '../base.html' %}
+{% load static %}
+    {% block body %}
+
+        {% for key in keys %}
+            <h2>{{ key }}</h2>
+            
+        {% endfor %}
+
+    {% endblock %}
+
+    <!-- Product Single --
+    <div class="section product-single product-template__container">
+        <div class="container">
+            <div class="product-single-wrap">
+                <div class="row display-table">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 display-table-cell">
+                        <img src="{% static 'images/product-images/8.jpeg' %}" alt="" class="product-featured-img"/>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 display-table-cell">
+                        <div class="product-single__meta">
+                            <h2 class="grid_item-title h2">Steal The Deal</h2>
+                            <h2 class="product-single__title h4">
+                                <a href="#"> Travel Bag</a>
+                            </h2>
+                            <p class="product-single__price">
+                                <span class="money"><del>$15.79</del></span>
+                                <span class="product-price__price product-price__sale product-price__sale--single">
+                                    <span class="money" style="color: #04023B;">$9.21</span>
+                                </span>
+                            </p>
+                            <div class="product-single__description rte" style="font-family: Arial, Helvetica, sans-serif; color: black;font-weight: 400;">The perfect makeup bag for every personality! It can hold all your essentials including a full sized makeup palette &amp; brushes! Highlights:Zipper Closure</div>
+                            !-- Product Action --
+                            <div class="product-action clearfix">
+                                <div class="product-form__item--quantity">
+                                    <div class="wrapQtyBtn">
+                                        <div class="qtyField">
+                                            <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
+                                            <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty">
+                                            <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>                                
+                                <div class="product-form__item--submit">
+                                    <button type="button" name="add" class="btn product-form__cart-submit">
+                                        <span>Add to cart</span>
+                                    </button>
+                                </div>
+                                <div class="display-table shareRow">
+                                    <div class="display-table-cell">
+                                        <div class="wishlist-btn">
+                                            <a class="wishlist add-to-wishlist" href="#" title="Add to Wishlist"><a href=""><img src="static\images\logo\star.svg" style="margin-right: 1vw;" alt=""></a> 
+                                            <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: black;">ADD TO WISHLIST</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            !-- End Product Action --
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    !--End Product Single -->

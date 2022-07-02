@@ -1,0 +1,266 @@
+{% extends '../base.html' %}
+    {% block body %}
+        {% load static %} 
+        <!--Body Content-->
+        <div id="page-content">
+            <!--MainContent-->
+            <div id="MainContent" class="main-content" role="main">
+                <!--Breadcrumb-->
+                <div class="bredcrumbWrap">
+                    <div class="container breadcrumbs" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: bolder;">
+                        <a href="{% url 'homepage_view' %}" title="Back to the home page">Home</a><span aria-hidden="true">›</span><span >{{ category }}</span><span aria-hidden="true">›</span><span >{{ gender }}</span><span aria-hidden="true">›</span><span >{{ subcategory.Name }}</span>
+                    </div>
+                </div>
+                <!--End Breadcrumb-->
+                
+                <div id="ProductSection-product-template" class="product-template__container prstyle1 container">
+                    <!--product-single-->
+                    <div class="product-single">
+                        <div class="row" style="margin-top: 10vh;">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="product-details-img">
+                                    <div class="product-thumb">
+                                        <div id="gallery" class="product-dec-slider-2 product-tab-left">
+                                          
+                                            <a data-image="{% get_media_prefix %}{{image1}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                                                <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{image1}}" alt="" />
+                                            </a>
+
+                                            <a data-image="{% get_media_prefix %}{{image2}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{image2}}" alt="" />
+                                            </a>
+
+                                            <a data-image="{% get_media_prefix %}{{image3}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{image3}}" alt="" />
+                                            </a>
+                                          
+                                            <a data-image="{% get_media_prefix %}{{image4}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{image4}}" alt="" />
+                                            </a>
+                                        
+                                            <a data-image="{% get_media_prefix %}{{image5}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{image5}}" alt="" />
+                                            </a>
+
+                                            <a data-image="{% get_media_prefix %}{{image6}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{image6}}" alt="" />
+                                            </a>
+                                          
+                                            <a data-image="{% get_media_prefix %}{{image7}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{image7}}" alt="" />
+                                            </a>
+                                        
+                                            <a data-image="{% get_media_prefix %}{{image8}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{image8}}" alt="" />
+                                            </a>
+                                      
+
+
+                                            
+                                          
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="zoompro-wrap product-zoom-right pl-20">
+                                        <div class="zoompro-span" >
+                                            <img class="blur-up lazyload zoompro" style="height:400px;" alt="" src="{% get_media_prefix %}{{image1}}" />
+                                        </div>
+                                   
+                                        
+                                    </div>
+                                    <!-- <div class="lightboximages">
+                                        <a href="{% static 'images/product-images/1.jpg' %}" data-size="1462x2048"></a>
+                                        <a href="{% static 'images/product-detail-page/camelia-reversible-big2.jpg' %}" data-size="1462x2048"></a>
+                                        <a href="{% static 'images/product-detail-page/camelia-reversible-big3.jpg' %}" data-size="1462x2048"></a>
+                                        <a href="{% static 'images/product-detail-page/camelia-reversible7-big.jpg' %}" data-size="1462x2048"></a>
+                                        <a href="{% static 'images/product-detail-page/camelia-reversible-big4.jpg' %}" data-size="1462x2048"></a>
+                                        <a href="{% static 'images/product-detail-page/camelia-reversible-big5.jpg' %}" data-size="1462x2048"></a>
+                                        <a href="{% static 'images/product-detail-page/camelia-reversible-big6.jpg' %}" data-size="731x1024"></a>
+                                        <a href="{% static 'images/product-detail-page/camelia-reversible-big7.jpg' %}" data-size="731x1024"></a>
+                                        <a href="{% static 'images/product-detail-page/camelia-reversible-big8.jpg' %}" data-size="731x1024"></a>
+                                        <a href="{% static 'images/product-detail-page/camelia-reversible-big9.jpg' %}" data-size="731x1024"></a>
+                                        <a href="{% static 'images/product-detail-page/camelia-reversible-big10.jpg' %}" data-size="731x1024"></a>
+                                    </div> -->
+        
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                 <center><div><h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 600;letter-spacing: 0.1em;">{{ name }}</h1></div>
+                                        <div class="product colour" >{{ description}}</div>
+                                        <div class="product price" style="margin-top: 2vh;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: black;font-size: 25px;">{{ price }}</div>
+                                        <!-- <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Note: This is condition 9 shoes</span> -->
+                                        <form method="post" action="http://annimexweb.com/cart/add" id="product_form_10508262282" style="margin-top: 3vh;" accept-charset="UTF-8" class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
+                                            
+                                            <div class="swatch clearfix swatch-1 option2" data-option-index="1">
+                                                <div class="product-form__item">
+                                                  <label class="header">Size: <span class="slVariant">XS</span></label>
+                                                  <div data-value="XS" class="swatch-element xs available">
+                                                    <input class="swatchInput" id="swatch-1-xs" type="radio" name="option-1" value="XS">
+                                                    <label class="swatchLbl medium" for="swatch-1-xs" title="XS">XS</label>
+                                                  </div>
+                                                  
+                                                </div>
+                                            </div>
+                                      
+                                        </form>
+                                        <p class="infolinks" style="margin-top: 4vh;"><a href="#sizechart" class="sizelink btn"> Size Guide</a> <a href="#productInquiry" class="emaillink btn"> Ask About this Product</a></p>
+                                <div><button style="background-color: black;color: white;height: 8vh;width:25vw;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: larger;font-weight: 800;letter-spacing: 0.1em;">ADD   TO   CART</button></div>
+                                <div style="margin-top: 1vh;"><button style="background-color: grey;color: white;height: 8vh;width:25vw;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: larger;font-weight: 800;letter-spacing: 0.1em;">BUY IT NOW</button></div>
+                               
+                                    </center>
+                                  
+                                </div>
+                                  
+                                        
+                                   
+                                
+                                </div>
+                        </div>
+                    </div>
+                    <!--End-product-single-->
+                    
+                    <!--Product Tabs-->
+                    <div class="tabs-listing">
+                        <ul class="product-tabs" >
+                            <li rel="tab1"><a class="tablink">Product Details</a></li>
+                            <p>{{ description }}</p>
+                        </ul>
+    
+                    </div>
+                    <!--End Product Tabs-->
+
+                    <center><h1 style="font-weight: bolder;">RELATED PRODUCTS</h1></center>
+                    <div class="tab_container">
+                        <div id="tab1" class="tab_content grid-products">
+                            <div class="productSlider">
+                               <div class="col"> 
+                                  <!-- start product image -->
+                                    <div class="product-image">
+                                        <!-- start product image -->
+                                        <a href="product-layout-1.html" class="grid-view-item__link">
+                                            <!-- image -->
+                                            <img class="primary blur-up lazyload" data-src="{% static 'images/product-images/1.jpg' %}" style="height: 300px;object-fit: contain;"  alt="image" title="product">
+                                            <!-- End image -->
+                                          
+                                        <!-- Start product button -->
+                                       
+                                         
+                                        <!-- end product button -->
+                                    </div>
+                                    <!-- end product image -->
+                
+                                    <!--start product details -->
+                                    <div class="product-details">
+                                        <!-- product name -->
+                                        <div class="product-name">
+                                            <a href="product-layout-1.html" style="color: black;font-size:small;">JORDAN 1 LOW</a>
+                                        </div>
+                                        <div class="product-name">
+                                            <a href="product-layout-1.html" style="font-size: x-small;" >NIKE</a>
+                                        </div>
+                                        
+                                        <!-- End product name -->
+                                        <!-- product price -->
+                                        <div class="product-price">
+                                            <span class="price" style="font-size: small;" >$748.00</span>
+                                        </div>
+                                        <!-- End product price -->
+                                       
+                                    </div>
+                                </div>
+                                
+                                       
+                                    
+                            </div>
+                        </div>
+                   
+               
+                    </div>
+                    </div>
+                <!--#ProductSection-product-template-->
+            </div>
+            <!--MainContent-->
+        </div>
+    	<!--End Body Content-->
+    
+    
+        
+     <!-- Including Jquery -->
+     <script src="{% static 'js/vendor/jquery-3.3.1.min.js' %}"></script>
+     <script src="{% static 'js/vendor/jquery.cookie.js' %}"></script>
+     <script src="{% static 'js/vendor/modernizr-3.6.0.min.js' %}"></script>
+     <script src="{% static 'js/vendor/wow.min.js' %}"></script>
+     <!-- Including Javascript -->
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'js/plugins.js' %}"></script>
+     <script src="{% static 'js/popper.min.js' %}"></script>
+     <script src="{% static 'js/lazysizes.js' %}"></script>
+     <script src="{% static 'js/main.js' %}"></script>
+     <!-- Photoswipe Gallery -->
+     <script src="{% static 'js/vendor/photoswipe.min.js' %}"></script>
+     <script src="{% static 'js/vendor/photoswipe-ui-default.min.js' %}"></script>
+     <script>
+        $(function(){
+            var $pswp = $('.pswp')[0],
+                image = [],
+                getItems = function() {
+                    var items = [];
+                    $('.lightboximages a').each(function() {
+                        var $href   = $(this).attr('href'),
+                            $size   = $(this).data('size').split('x'),
+                            item = {
+                                src : $href,
+                                w: $size[0],
+                                h: $size[1]
+                            }
+                            items.push(item);
+                    });
+                    return items;
+                }
+            var items = getItems();
+        
+            $.each(items, function(index, value) {
+                image[index]     = new Image();
+                image[index].src = value['src'];
+            });
+            $('.prlightbox').on('click', function (event) {
+                event.preventDefault();
+              
+                var $index = $(".active-thumb").parent().attr('data-slick-index');
+                $index++;
+                $index = $index-1;
+        
+                var options = {
+                    index: $index,
+                    bgOpacity: 0.9,
+                    showHideOpacity: true
+                }
+                var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+                lightBox.init();
+            });
+        });
+        </script>
+    </div>
+
+	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        	<div class="pswp__bg"></div>
+            <div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button><button class="pswp__button pswp__button--share" title="Share"></button><button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button><button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button><button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div>
+            <script>
+              window.onscroll = function() {myFunction()};
+              
+              // Get the navbar
+              var navbar = document.getElementById("navbar");
+              
+              // Get the offset position of the navbar
+              var sticky = navbar.offsetTop;
+              
+              // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+              function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                  navbar.classList.add("sticky")
+                } else {
+                  navbar.classList.remove("sticky");
+                }
+              }
+              </script>
+{% endblock %}
