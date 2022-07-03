@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     #Custom Applications
     'core', 
     'products',
+    'cart',
+    'user',
 
     'django.contrib.admin',
     'django.contrib.auth',
