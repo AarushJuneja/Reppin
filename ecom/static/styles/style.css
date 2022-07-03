@@ -62,8 +62,8 @@ Table of Content:
 ========================================================================*/
 @font-face {
   font-family: 'zurichultraBlkExbt';
-  src: url('static/fonts/zurich_ultra_black_extended_bt-webfont.woff') format('woff2'),
-       url('static/fonts/zurich_ultra_black_extended_bt-webfont.woff2') format('woff2');
+  src: url('../fonts/zurich_ultra_black_extended_bt-webfont.woff') format('woff2'),
+       url('../fonts/zurich_ultra_black_extended_bt-webfont.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 
