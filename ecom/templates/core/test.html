@@ -2,7 +2,9 @@
 {% load static %}
     {% block body %}
 
-            <h2>{{ banner2__Product1 }}</h2>
+            {% for product in products %}
+            <h2>{{ product }}</h2>
+            {% endfor %}
         
 
     {% endblock %}
