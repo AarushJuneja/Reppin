@@ -110,10 +110,11 @@
                             
                             <div class="col">
                                 <div class="site-cart d-block" style=" margin-left: 1vw;">
-                                    <a href="#;" class="site-header__cart" title="Cart">
+                                    <a href="{% url 'cart_view' %}" class="site-header__cart" title="Cart">
                                         <img class="icon anm anm-bag-l" src="{% static 'images/logo/Bag.svg' %}"></img>
-                                        <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span>
-                                    </a>   
+                                    </a>
+                                        <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">{{ count }}</span>
+                                       
                                 </div>
                                 <button type="button"  style="border: none;float:right; position:relative;" class="search-trigger"><i style="font-size: 1.3em;" class="icon anm anm-search-l"></i></button>  
                             </div>
@@ -148,10 +149,11 @@
 
                             <div class="col float-right">
                                 <div class="site-cart d-block" style=" margin-left: 1vw;">
-                                    <a href="#;" class="site-header__cart" title="Cart">
+                                    <a href="{% url 'cart_view' %}" class="site-header__cart" title="Cart">
                                         <img class="icon anm anm-bag-l" src="{% static 'images/logo/Bag.svg' %}"></img>
-                                        <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span>
                                     </a>
+                                        <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">{{ count }}</span>
+                                    
                                 </div>
                                 <button type="button"  style="border: none;float:right; position:relative;" class="search-trigger"><img style="font-size: 1.3em;" src="{% static 'images/logo/Search .svg' %}" class="icon anm anm-search-l"></img></button>
                             </div>

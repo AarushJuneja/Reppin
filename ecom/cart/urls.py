@@ -3,15 +3,15 @@ from django.urls import path
 
 from .views import (
     AddToCart,
-    UserCart,
+    cart_view,
     Checkout
 )
 
 urlpatterns = [
     path(
         '',
-        UserCart,
-        name='cart',
+        cart_view,
+        name='cart_view',
     ),
 
     path(

@@ -1,44 +1,55 @@
-from django.shortcuts import render
+from http.client import ImproperConnectionState
+from django.shortcuts import render, redirect
+from numpy import product
 from . models import Cart
 from products.models import Product
+from user.models import User
 
-def UserCart(request):
-    cart = Cart.objects.get(User__Id=1)
-    products = cart.Products.all()
-
+def cart_view(request):
+    total = 0
     data = {}
+    data['count'] = Cart.objects.filter(User__Id=1).count()
     data['products'] = []
-
-    for product in products:
+    carts = Cart.objects.filter(User__Id=1)
+    for cart in carts:
         data['products'].append({
-            'name' : product.Name,
-            'image' : product.Image1,
-            'price' : product.Price,
-        }) 
+            'id' : cart.Product.Id,
+            'name': cart.Product.Name,
+            'price': cart.Product.Price,
+            'image': cart.Product.Image1,
+            'quantity': cart.Quantity,
+            'subtotal': cart.Quantity * cart.Product.Price
+        })
+        total += (cart.Product.Price * cart.Quantity)
+    data['total'] = total
     return render(request, 'core/cart.html', data)
 
 def AddToCart(request, id):
-    if(Cart.objects.get(User__Id=1)):
-        cart = Cart.objects.get(User__Id=1)
+    if(Cart.objects.filter(User__Id=1, Product__Id=id)):
+        cart = Cart.objects.get(User__Id=1, Product__Id=id)
+        cart.Quantity += 1
+        cart.save()
+        print(cart)
+        print(cart.Quantity)
+
     else:
-        Cart.objects.create(User__Id=1)
+        user = User.objects.get(Id=1)
+        product = Product.objects.get(Id=id)
+        Cart.objects.create(User=user, Product=product, Quantity=1)
 
-    if(cart.Products.through.objects.filter(product_id=id)):
-        incart = True
-    else: 
-        cart.Products.add(Product.objects.get(Id=id))
-
-    return UserCart(request)
+    return redirect('/cart')
 
 def RemoveFromCart(request, id):
-    cart = Cart.objects.get(User__Id=1)
-
-    if(cart.Products.through.objects.filter(product_id=id)):
-        cart.Products.remove(Product.objects.get(Id=id))
-    else: 
-        pass
-
-    return UserCart(request)
+    if(Cart.objects.filter(User__Id=1, Product__Id=id)):
+        cart = Cart.objects.get(User__Id=1, Product__Id=id)
+        if(cart.Quantity > 1):
+            cart.Quantity -= 1
+            cart.save()
+        elif(cart.Quantity == 1):
+            Cart.objects.filter(User__Id=1, Product__Id=id).delete()
+    else:
+        return redirect('/cart')
+    return redirect('/cart')
 
 def Checkout(request):
     return render(request, 'core/checkout.html')

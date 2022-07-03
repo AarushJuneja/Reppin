@@ -47,14 +47,14 @@
                                         <td class="cart__update-wrapper cart-flex-item text-right">
                                             <div class="cart__qty text-center">
                                                 <div class="qtyField">
-                                                    <a class="qtyBtn minus" href="javascript:void(0);"><i class="icon icon-minus"></i></a>
-                                                    <input class="cart__qty-input qty" type="text" name="updates[]" id="qty" value="1" pattern="[0-9]*">
-                                                    <a class="qtyBtn plus" href="javascript:void(0);"><i class="icon icon-plus"></i></a>
+                                                    <a class="qtyBtn minus" href="{% url 'removefromcart' id=product.id %}" ><i class="icon icon-minus"></i></a>
+                                                    <input class="cart__qty-input qty" type="text" name="updates[]" id="qty" value={{product.quantity}} pattern="[0-9]*">
+                                                    <a class="qtyBtn plus" href="{% url 'addtocart' id=product.id %}"><i class="icon icon-plus"></i></a>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="text-right small--hide cart-price">
-                                            <div><span class="money">{{ product.price}}</span></div>
+                                            <div><span class="money">{{ product.subtotal }}</span></div>
                                         </td>
                                         <td class="text-center small--hide"><a href="#" class="btn btn--secondary cart__remove" title="Remove tem"><i class="icon icon anm anm-times-l"></i></a></td>
                                     </tr>
@@ -62,12 +62,12 @@
                                     
                                     
                                 </tbody>
-                                <tfoot>
+                                <!-- <tfoot>
                                     <tr>
                                         <td colspan="3" class="text-left"><a href="http://annimexweb.com/" class="btn--link cart-continue"><i class="icon icon-arrow-circle-left"></i> Continue shopping</a></td>
                                         <td colspan="3" class="text-right"><button type="submit" name="update" class="btn--link cart-update"><i class="fa fa-refresh"></i> Update</button></td>
                                     </tr>
-                                </tfoot>
+                                </tfoot> -->
                         </table>
                         
                     
@@ -77,16 +77,16 @@
                         </form>                   
                     </div>
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 cart__footer">
-                        <div class="cart-note">
+                        <!-- <div class="cart-note">
                             <div class="solid-border">
                                 <h5><label for="CartSpecialInstructions" class="cart-note__label small--text-center">Add a note to your order</label></h5>
                                 <textarea name="note" id="CartSpecialInstructions" class="cart-note__input"></textarea>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="solid-border">
                         <div class="row">
                             <span class="col-12 col-sm-6 cart__subtotal-title"><strong>Subtotal</strong></span>
-                            <span class="col-12 col-sm-6 cart_subtotal-title cart_subtotal text-right"><span class="money">$735.00</span></span>
+                            <span class="col-12 col-sm-6 cart_subtotal-title cart_subtotal text-right"><span class="money">{{ total }}</span></span>
                         </div>
                         <div class="cart__shipping">Shipping &amp; taxes calculated at checkout</div>
                         <p class="cart_tearm">

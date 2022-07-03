@@ -2,12 +2,14 @@ from django.shortcuts import render
 from requests import request
 
 from products.models import Product
+from cart.models import Cart
 
 # Create your views here.
 def product_detail(request, id):
     product = Product.objects.get(Id=id)
     data = {
             'id' : product.Id,
+            'count' : Cart.objects.filter(User__Id=1).count(),
             'name' : product.Name,
             'description' : product.Description,
             'size' : product.Size,

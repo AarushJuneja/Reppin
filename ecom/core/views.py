@@ -23,6 +23,8 @@ from products.models import (
     Gender,   
 )
 
+from cart.models import Cart
+
 header = Header.objects.first()
 headings = header.Headings.all()
 banners = FeaturedBanner.objects.all()
@@ -135,11 +137,13 @@ for heading in headings:
 
 
 def homepage_view(request):
+    data['count'] = Cart.objects.filter(User__Id=1).count()
     return render(request,'core/homepage.html', data)
 
 
 def category_view(request, category):
     data['products'] = []
+    data['count'] = Cart.objects.filter(User__Id=1).count()
     products = Product.objects.filter(Category__Name=category)
     for product in products:
         data['products'].append({
@@ -168,6 +172,7 @@ def category_view(request, category):
 
 def category_gender_view(request, category, gender):
     data['products'] = []
+    data['count'] = Cart.objects.filter(User__Id=1).count()
     products = Product.objects.filter(Category__Name=category, Gender__Gender=gender)
     for product in products:
         data['products'].append({
@@ -196,6 +201,7 @@ def category_gender_view(request, category, gender):
 
 def category_gender_subcategory_view(request, category, gender, subcategory):
     data['products'] = []
+    data['count'] = Cart.objects.filter(User__Id=1).count()
     products = Product.objects.filter(Category__Name=category, Gender__Gender=gender, Subcategory__Name=subcategory)
     for product in products:
         data['products'].append({
@@ -225,6 +231,7 @@ def category_gender_subcategory_view(request, category, gender, subcategory):
 
 def brand_view(request, brand):
     data['products'] = []
+    data['count'] = Cart.objects.filter(User__Id=1).count()
     products = Product.objects.filter(Brand__Name=brand)
     for product in products:
         data['products'].append({

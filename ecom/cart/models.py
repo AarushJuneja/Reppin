@@ -6,4 +6,6 @@ from products.models import Product
 # Create your models here.
 class Cart(models.Model):
     User = models.ForeignKey(User, on_delete=models.CASCADE)
-    Products = models.ManyToManyField(Product, blank=True, related_name='cart')
+    Product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    Quantity = models.IntegerField()
+
