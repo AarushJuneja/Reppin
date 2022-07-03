@@ -85,11 +85,8 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                    <center>
-                                        <div>
-                                            <h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 600;letter-spacing: 0.1em;">{{ name }}</h1>
-                                        </div>
-                                        <div class="product colour" >{{ description }}</div>
+                                 <center><div><h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 600;letter-spacing: 0.1em;">{{ name }}</h1></div>
+                                        <div class="product colour" >{{ description}}</div>
                                         <div class="product price" style="margin-top: 2vh;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: black;font-size: 25px;">{{ price }}</div>
                                         <!-- <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Note: This is condition 9 shoes</span> -->
                                         <form method="post" action="http://annimexweb.com/cart/add" id="product_form_10508262282" style="margin-top: 3vh;" accept-charset="UTF-8" class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
@@ -104,15 +101,14 @@
                                                   
                                                 </div>
                                             </div>
+                                      
                                         </form>
-
-                                        <p class="infolinks" style="margin-top: 4vh;"><a href="#sizechart" class="sizelink btn"> Size Guide</a> <a href="{% url 'addtocart' id=id %}" class="emaillink btn"> Ask About this Product</a></p>
-                                        
-                                        <div>
-                                            <a href="{% url 'addtocart' id=id %}"><button style="background-color: black;color: white;height: 8vh;width:25vw;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: larger;font-weight: 800;letter-spacing: 0.1em;">ADD   TO   CART</button></a>
-                                        </div>
+                                        <p class="infolinks" style="margin-top: 4vh;"><a href="#sizechart" class="sizelink btn"> Size Guide</a> <a href="#productInquiry" class="emaillink btn"> Ask About this Product</a></p>
+                                <div><button style="background-color: black;color: white;height: 8vh;width:25vw;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: larger;font-weight: 800;letter-spacing: 0.1em;">ADD   TO   CART</button></div>
+                                <div style="margin-top: 1vh;"><button style="background-color: grey;color: white;height: 8vh;width:25vw;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: larger;font-weight: 800;letter-spacing: 0.1em;">BUY IT NOW</button></div>
                                
-                                    </center> 
+                                    </center>
+                                  
                                 </div>
                                   
                                         

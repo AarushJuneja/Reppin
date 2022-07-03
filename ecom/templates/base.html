@@ -101,13 +101,10 @@
                                 </button>
                             </div>
 
-                            
-                            <div class="col " style="object-fit: contain; position: relative;">
-                                <a href="{% url 'homepage_view' %}" >
-                                    <img src="{% static 'images/logo/logo.svg' %}" style="width: 400px;"  alt="">
-                                </a>
+                            <div class="col " style="object-fit: contain; position: relative;" >
+                                <img src="{% static 'images/logo/logo.svg' %}" style="width: 400px;"  alt="">
                             </div>
-                            
+
                             <div class="col">
                                 <div class="site-cart d-block" style=" margin-left: 1vw;">
                                     <a href="#;" class="site-header__cart" title="Cart">
@@ -119,7 +116,6 @@
                             </div>
 
                         </div>
-
                     </div>
                 </div>
                 <!-- mobile header ends -->
@@ -138,13 +134,9 @@
 
                             </div>
                         
-                            
                             <div class="col d-none d-lg-block" style="margin-left: 10vw;" >
-                                <a href="{% url 'homepage_view' %}" >
-                                <img href="{% url 'homepage_view' %}" src="{% static 'images/logo/logo.svg' %}" style="max-width: 200px;">
-                            </a>
+                                <img src="{% static 'images/logo/logo.svg' %}" style="max-width: 200px;">
                             </div>
-                            
 
                             <div class="col float-right">
                                 <div class="site-cart d-block" style=" margin-left: 1vw;">
@@ -174,25 +166,25 @@
                         {% endif %}
 
                         {% for Group in Groups %}
-                            <li class="lvl1 parent megamenu"><a href="{% url 'category_view' category=Group.GroupTitle %}"  >{{ Group.GroupTitle }} <i class="anm anm-angle-down-l"></i></a>
-                                <div class="megamenu style1" >
-                                    <ul class="grid mmWrapper">
-                                        <li class="grid__item large-up--one-whole">
-                                            <ul class="grid">
-                                                {% for SubGroup in Group.SubGroups %}
-                                                    <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="{% url 'category_gender_view' category=Group.GroupTitle gender=SubGroup.SubGroupTitle %}" class="site-nav lvl-1">{{ SubGroup.SubGroupTitle}}</a>
-                                                        <ul class="subLinks">
-                                                            {% for GroupItem in SubGroup.GroupItems %}
-                                                                <li class="lvl-2"><a href="{% url 'category_gender_subcategory_view' category=Group.GroupTitle gender=SubGroup.SubGroupTitle subcategory=GroupItem%}" class="site-nav lvl-2">{{ GroupItem }}</a></li>
-                                                            {% endfor %}
-                                                        </ul>
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+                        <li class="lvl1 parent megamenu"><a href="{% url 'category_view' category=Group.GroupTitle %}"  >{{ Group.GroupTitle }} <i class="anm anm-angle-down-l"></i></a>
+                            <div class="megamenu style1" >
+                                <ul class="grid mmWrapper">
+                                    <li class="grid__item large-up--one-whole">
+                                        <ul class="grid">
+                                            {% for SubGroup in Group.SubGroups %}
+                                                <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="{% url 'category_gender_view' category=Group.GroupTitle gender=SubGroup.SubGroupTitle %}" class="site-nav lvl-1">{{ SubGroup.SubGroupTitle}}</a>
+                                                    <ul class="subLinks">
+                                                        {% for GroupItem in SubGroup.GroupItems %}
+                                                            <li class="lvl-2"><a href="{% url 'category_gender_subcategory_view' category=Group.GroupTitle gender=SubGroup.SubGroupTitle subcategory=GroupItem%}" class="site-nav lvl-2">{{ GroupItem }}</a></li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                         {% endfor %}
                     </ul>
                 </nav>
@@ -222,24 +214,6 @@
                                 </li>
                             </ul>
                         </li>
-
-                        {% for Group in Groups %}
-                            <li class="lvl1 parent megamenu"><a href="{% url 'category_view' category=Group.GroupTitle %}"  >{{ Group.GroupTitle }} <i class="anm anm-plus-l"></i></a>
-                                <ul>
-                                    {% for SubGroup in Group.SubGroups %}
-                                        <li><a href="{% url 'category_gender_view' category=Group.GroupTitle gender=SubGroup.SubGroupTitle %}" class="site-nav">{{ SubGroup.SubGroupTitle}}<i class="anm anm-plus-l"></i></a>
-                                            <ul>
-                                                {% for GroupItem in SubGroup.GroupItems %}
-                                                    <li><a href="{% url 'category_gender_subcategory_view' category=Group.GroupTitle gender=SubGroup.SubGroupTitle subcategory=GroupItem%}" class="site-nav">{{ GroupItem }}</a></li>
-                                                {% endfor %}
-                                            </ul>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            </li>
-                        {% endfor %}
-
-
                     </ul>
                 </div>
                 <!--End Mobile Menu-->

@@ -5,5 +5,5 @@ from products.models import Product
 
 # Create your models here.
 class Cart(models.Model):
-    User = models.ForeignKey(User, on_delete=models.CASCADE)
+    User = models.ForeignKey(User)
     Products = models.ManyToManyField(Product, blank=True, related_name='cart')
