@@ -6,6 +6,7 @@ from .views import (
     category_view,
     category_gender_view,
     category_gender_subcategory_view,
+    brand_view,
 )
 
 from core.models import (
@@ -33,19 +34,25 @@ urlpatterns = [
     ),
 
     path(
-        'p1/<str:category>',
+        'A/<str:category>',
         category_view,
         name='category_view',
     ),
 
     path(
-        'p2/<str:category>/<str:gender>',
+        'B/<str:brand>',
+        brand_view,
+        name='brand_view',
+    ),
+
+    path(
+        'C/<str:category>/<str:gender>',
         category_gender_view,
         name='category_gender_view',
     ),
 
     path(
-        'p3/<str:category>/<str:gender>/<str:subcategory>',
+        'D/<str:category>/<str:gender>/<str:subcategory>',
         category_gender_subcategory_view,
         name='category_gender_subcategory_view',
     )

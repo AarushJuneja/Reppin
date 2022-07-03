@@ -6,6 +6,8 @@ import pathlib
 from products.models import (
     Category,
     Subcategory,
+    Brand, 
+    Product
 )
 
 def carousel_image_handle(self, filename):
@@ -66,4 +68,27 @@ class Carousel(models.Model):
     class Meta: 
         verbose_name = "Carousel"
 
+class FeaturedBanner(models.Model):
+    Name = models.CharField(max_length=50)
+    Brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
+    BrandImage = models.ImageField(upload_to="brands")
+    Product1 = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="products1")
+    Product2 = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="products2")
+    Product3 = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="products3")
+    Product4 = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="products4")
 
+    def __str__(self):
+        return self.Name
+
+    class Meta: 
+        verbose_name = "Featured Banner"
+
+class FeaturedBrands(models.Model):
+    Brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
+    BrandImage = models.ImageField(upload_to="brands")
+
+    def __str__(self):
+        return self.Brand.Name
+
+    class Meta: 
+        verbose_name = "Featured Brand"

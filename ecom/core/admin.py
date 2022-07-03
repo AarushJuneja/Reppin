@@ -7,10 +7,14 @@ from .models import (
     FeaturedSection,
     SubGroup,
     GroupItem,
-    Carousel
+    Carousel,
+    FeaturedBanner,
+    FeaturedBrands
 )
 admin.site.register(FeaturedSection)
 admin.site.register(Header)
 admin.site.register(SubGroup)
 admin.site.register(GroupItem)
 admin.site.register(Carousel)
+admin.site.register(FeaturedBanner)
+admin.site.register(FeaturedBrands)
