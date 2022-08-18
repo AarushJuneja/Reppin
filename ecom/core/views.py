@@ -39,6 +39,7 @@ data = {
     'Groups' : [],
     'brands' : [],
     'latest': latest,
+    'featured': featured,
     'discount': discount,
     'carousel': carousel,
 }
@@ -137,14 +138,27 @@ for heading in headings:
 
 
 def homepage_view(request):
-    data['count'] = Cart.objects.filter(User__Id=1).count()
+
+    carts = Cart.objects.filter(User__Id=1)
+    count = 0
+    for cart in carts:
+        count += cart.Quantity
+    data['count'] = count    
+
     return render(request,'core/homepage.html', data)
 
 
 def category_view(request, category):
     data['products'] = []
-    data['count'] = Cart.objects.filter(User__Id=1).count()
+
+    carts = Cart.objects.filter(User__Id=1)
+    count = 0
+    for cart in carts:
+        count += cart.Quantity
+    data['count'] = count
+
     products = Product.objects.filter(Category__Name=category)
+    data['totalProducts'] = products.count()
     for product in products:
         data['products'].append({
             'id' : product.Id,
@@ -172,8 +186,15 @@ def category_view(request, category):
 
 def category_gender_view(request, category, gender):
     data['products'] = []
-    data['count'] = Cart.objects.filter(User__Id=1).count()
+
+    carts = Cart.objects.filter(User__Id=1)
+    count = 0
+    for cart in carts:
+        count += cart.Quantity
+    data['count'] = count
+
     products = Product.objects.filter(Category__Name=category, Gender__Gender=gender)
+    data['totalProducts'] = products.count()
     for product in products:
         data['products'].append({
             'id' : product.Id,
@@ -201,8 +222,15 @@ def category_gender_view(request, category, gender):
 
 def category_gender_subcategory_view(request, category, gender, subcategory):
     data['products'] = []
-    data['count'] = Cart.objects.filter(User__Id=1).count()
+
+    carts = Cart.objects.filter(User__Id=1)
+    count = 0
+    for cart in carts:
+        count += cart.Quantity
+    data['count'] = count
+
     products = Product.objects.filter(Category__Name=category, Gender__Gender=gender, Subcategory__Name=subcategory)
+    data['totalProducts'] = products.count()
     for product in products:
         data['products'].append({
             'id' : product.Id,
@@ -231,8 +259,15 @@ def category_gender_subcategory_view(request, category, gender, subcategory):
 
 def brand_view(request, brand):
     data['products'] = []
-    data['count'] = Cart.objects.filter(User__Id=1).count()
+
+    carts = Cart.objects.filter(User__Id=1)
+    count = 0
+    for cart in carts:
+        count += cart.Quantity
+    data['count'] = count
+    
     products = Product.objects.filter(Brand__Name=brand)
+    data['totalProducts'] = products.count()
     for product in products:
         data['products'].append({
             'id' : product.Id,

@@ -46,7 +46,7 @@ class SubGroup(models.Model):
 
 class GroupItem(models.Model):
     Title = models.CharField(max_length=255)
-    Subgroup = models.ForeignKey(Subcategory, on_delete=models.CASCADE)
+    # Subgroup = models.ForeignKey(Subcategory, on_delete=models.CASCADE)
     ParentGroup = models.ForeignKey(SubGroup, on_delete=models.CASCADE, related_name='groupitems')
     def __str__(self):
         return self.Title + " - " + self.ParentGroup.Title + " - " + self.ParentGroup.ParentGroup.Name
@@ -92,3 +92,4 @@ class FeaturedBrands(models.Model):
 
     class Meta: 
         verbose_name = "Featured Brand"
+

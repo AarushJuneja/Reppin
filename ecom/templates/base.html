@@ -10,7 +10,7 @@
         <meta name="description" content="description">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>ECOM</title>
+        <title>Reppin</title>
         
 
         <!-- Favicon -->
@@ -95,7 +95,7 @@
                         <div class="row ">
 
                             <div class="col d-lg-none float-left" >
-                                <button type="button" class="btn--link site-header__menu js-mobile-nav-toggle mobile-nav--open">
+                                <button type="button" class="site-header__menu js-mobile-nav-toggle mobile-nav--open">
                                     <i class="icon anm anm-times-l"></i>
                                     <i class="anm anm-bars-r"></i>
                                 </button>
@@ -110,7 +110,7 @@
                             
                             <div class="col">
                                 <div class="site-cart d-block" style=" margin-left: 1vw;">
-                                    <a href="{% url 'cart_view' %}" class="site-header__cart" title="Cart">
+                                    <a href="{% url 'cart_view' %}">
                                         <img class="icon anm anm-bag-l" src="{% static 'images/logo/Bag.svg' %}"></img>
                                     </a>
                                         <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">{{ count }}</span>
@@ -135,7 +135,8 @@
                                 
                             <div class="col d-none d-lg-block float-left" >
                                 <a href="{% url 'product_detail' id=143 %}"><img src="{% static 'images\logo\star.svg' %}" style="margin-right: 1vw;" alt=""></a>
-                                <a href=""><img src="{% static 'images\logo\profile.svg' %}" alt=""></a>
+                                <!-- <a href=""><img src="{% static 'images\logo\profile.svg' %}" alt=""></a> -->
+                                <a href=""><img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="" style="border-radius: 50%; width: 8%"></a>
 
                             </div>
                         
@@ -149,8 +150,10 @@
 
                             <div class="col float-right">
                                 <div class="site-cart d-block" style=" margin-left: 1vw;">
-                                    <a href="{% url 'cart_view' %}" class="site-header__cart" title="Cart">
-                                        <img class="icon anm anm-bag-l" src="{% static 'images/logo/Bag.svg' %}"></img>
+                                    
+                                    <a href="{% url 'cart_view' %}">
+                                        
+                                        <img href="{% url 'cart_view' %}" class="icon anm anm-bag-l" src="{% static 'images/logo/Bag.svg' %}"></img>
                                     </a>
                                         <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">{{ count }}</span>
                                     

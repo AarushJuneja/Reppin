@@ -8,7 +8,7 @@
                 <!--Breadcrumb-->
                 <div class="bredcrumbWrap">
                     <div class="container breadcrumbs" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: bolder;">
-                        <a href="{% url 'homepage_view' %}" title="Back to the home page">Home</a><span aria-hidden="true">›</span><span >{{ category }}</span><span aria-hidden="true">›</span><span >{{ gender }}</span><span aria-hidden="true">›</span><span >{{ subcategory.Name }}</span>
+                        <a href="{% url 'homepage_view' %}" title="Back to the home page">Home</a><span aria-hidden="true">›</span><span >{{ productData.category }}</span><span aria-hidden="true">›</span><span >{{ productData.gender }}</span><span aria-hidden="true">›</span><span >{{ parentData.subcategory.Name }}</span>
                     </div>
                 </div>
                 <!--End Breadcrumb-->
@@ -22,36 +22,36 @@
                                     <div class="product-thumb">
                                         <div id="gallery" class="product-dec-slider-2 product-tab-left">
                                           
-                                            <a data-image="{% get_media_prefix %}{{image1}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
-                                                <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{image1}}" alt="" />
+                                            <a data-image="{% get_media_prefix %}{{productData.image1}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                                                <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{productData.image1}}" alt="" />
                                             </a>
 
-                                            <a data-image="{% get_media_prefix %}{{image2}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
-                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{image2}}" alt="" />
+                                            <a data-image="{% get_media_prefix %}{{productData.image2}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{productData.image2}}" alt="" />
                                             </a>
 
-                                            <a data-image="{% get_media_prefix %}{{image3}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
-                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{image3}}" alt="" />
+                                            <a data-image="{% get_media_prefix %}{{productData.image3}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{productData.image3}}" alt="" />
                                             </a>
                                           
-                                            <a data-image="{% get_media_prefix %}{{image4}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
-                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{image4}}" alt="" />
+                                            <a data-image="{% get_media_prefix %}{{productData.image4}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{productData.image4}}" alt="" />
                                             </a>
                                         
-                                            <a data-image="{% get_media_prefix %}{{image5}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
-                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{image5}}" alt="" />
+                                            <a data-image="{% get_media_prefix %}{{productData.image5}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{productData.image5}}" alt="" />
                                             </a>
 
-                                            <a data-image="{% get_media_prefix %}{{image6}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
-                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{image6}}" alt="" />
+                                            <a data-image="{% get_media_prefix %}{{productData.image6}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{productData.image6}}" alt="" />
                                             </a>
                                           
-                                            <a data-image="{% get_media_prefix %}{{image7}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
-                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{image7}}" alt="" />
+                                            <a data-image="{% get_media_prefix %}{{productData.image7}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{productData.image7}}" alt="" />
                                             </a>
                                         
-                                            <a data-image="{% get_media_prefix %}{{image8}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
-                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{image8}}" alt="" />
+                                            <a data-image="{% get_media_prefix %}{{productData.image8}}"  data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                                              <img style="height:80px ;" class="blur-up lazyload" src="{% get_media_prefix %}{{productData.image8}}" alt="" />
                                             </a>
                                       
 
@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="zoompro-wrap product-zoom-right pl-20">
                                         <div class="zoompro-span" >
-                                            <img class="blur-up lazyload zoompro" style="height:400px;" alt="" src="{% get_media_prefix %}{{image1}}" />
+                                            <img class="blur-up lazyload zoompro" style="height:400px;" alt="" src="{% get_media_prefix %}{{productData.image1}}" />
                                         </div>
                                    
                                         
@@ -87,10 +87,10 @@
                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                                     <center>
                                         <div>
-                                            <h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 600;letter-spacing: 0.1em;">{{ name }}</h1>
+                                            <h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: 600;letter-spacing: 0.1em;">{{ productData.name }}</h1>
                                         </div>
-                                        <div class="product colour" >{{ description }}</div>
-                                        <div class="product price" style="margin-top: 2vh;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: black;font-size: 25px;">{{ price }}</div>
+                                        <div class="product colour" >{{ productData.description }}</div>
+                                        <div class="product price" style="margin-top: 2vh;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: black;font-size: 25px;">{{ productData.price }}</div>
                                         <!-- <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Note: This is condition 9 shoes</span> -->
                                         <form method="post" action="http://annimexweb.com/cart/add" id="product_form_10508262282" style="margin-top: 3vh;" accept-charset="UTF-8" class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
                                             
@@ -106,10 +106,10 @@
                                             </div>
                                         </form>
 
-                                        <p class="infolinks" style="margin-top: 4vh;"><a href="#sizechart" class="sizelink btn"> Size Guide</a> <a href="{% url 'addtocart' id=id %}" class="emaillink btn"> Ask About this Product</a></p>
+                                        <p class="infolinks" style="margin-top: 4vh;"><a href="#sizechart" class="sizelink btn"> Size Guide</a> <a href="{% url 'addtocart' id=productData.id %}" class="emaillink btn"> Ask About this Product</a></p>
                                         
                                         <div>
-                                            <a href="{% url 'addtocart' id=id %}"><button style="background-color: black;color: white;height: 8vh;width:25vw;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: larger;font-weight: 800;letter-spacing: 0.1em;">ADD   TO   CART</button></a>
+                                            <a href="{% url 'addtocart' id=productData.id %}"><button style="background-color: black;color: white;height: 8vh;width:25vw;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: larger;font-weight: 800;letter-spacing: 0.1em;">ADD   TO   CART</button></a>
                                         </div>
                                
                                     </center> 
@@ -127,7 +127,7 @@
                     <div class="tabs-listing">
                         <ul class="product-tabs" >
                             <li rel="tab1"><a class="tablink">Product Details</a></li>
-                            <p>{{ description }}</p>
+                            <p>{{ productData.description }}</p>
                         </ul>
     
                     </div>

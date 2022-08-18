@@ -23,14 +23,20 @@ from cart.views import (
     RemoveFromCart
 )
 
+from payment.views import (
+    paymenthandler,
+)
 
 urlpatterns = [
     path('', include('core.urls')),
+    path('accounts/', include('allauth.urls')),
     path('products/', include('products.urls')),
     path('admin/', admin.site.urls),
     path('cart/', include('cart.urls')),
     path('addtocart/<int:id>', AddToCart, name='addtocart'),
     path('removefromcart/<int:id>', RemoveFromCart, name='removefromcart'),
+    path('checkout/paymenthandler/', paymenthandler, name='paymenthandler'),
+
 
     
 ]

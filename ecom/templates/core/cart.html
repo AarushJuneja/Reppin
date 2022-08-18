@@ -1,3 +1,5 @@
+
+
 {% extends '../base.html' %}
 {% load static %}
     {% block body %}
@@ -89,13 +91,15 @@
                             <span class="col-12 col-sm-6 cart_subtotal-title cart_subtotal text-right"><span class="money">{{ total }}</span></span>
                         </div>
                         <div class="cart__shipping">Shipping &amp; taxes calculated at checkout</div>
-                        <p class="cart_tearm">
+                        <!-- <p class="cart_tearm">
                             <label>
                             <input type="checkbox" name="tearm" id="cartTearm" class="checkbox" value="tearm" required="">
                             I agree with the terms and conditions</label>
-                        </p>
-                        <input type="submit" name="checkout" id="cartCheckout" class="btn btn--small-wide checkout" value="Checkout" disabled="disabled">
-                        <div class="paymnet-img"><img src="assets/images/payment-img.jpg" alt="Payment"></div>
+                        </p> -->
+                        <!-- <input type="submit" name="checkout" id="cartCheckout" class="btn btn--small-wide checkout" value="Checkout" disabled="disabled"> -->
+                        <!-- <button class="btn" id="pay-btn">Proceed to Pay</button> -->
+                        <a href="{% url 'checkout' %}"><button class="btn btn--small-wide checkout" name="checkout">Checkout</button></a>
+                        <!-- <div class="paymnet-img"><img src="assets/images/payment-img.jpg" alt="Payment"></div> -->
                         </div>
 
                     </div>
@@ -105,3 +109,5 @@
         </div>
         <!--End Body Content-->
     {% endblock %}
+
+    
